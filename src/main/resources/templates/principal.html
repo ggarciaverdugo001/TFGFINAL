@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>canciones</title>
+<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
+</head>
+<body>
+	<nav
+		class="navbar navbar-expand-lg bg-body-primary sticky-top navbar-dark bg-dark"
+		data-bs-theme="dark">
+		<div class="container-xl">
+			<a class="navbar-brand" href="#">SoundGs</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Acceso</a>
+      </div>
+      
+      <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    </div>
+		</div>
+	</nav>
+	
+	
+
+
+	
+	
+	<div class="container-xl" style="margin-top: 2%">
+	<h1>Lista de álbumes </h1>
+  <div class="row">
+    <div class="col-3" style="padding:10px" th:each="album: ${albums}" th:object="${album}">
+
+
+				<div class="card h-100" style="padding: 10px ; margin-top : 10px">
+					<img th:src="*{portada}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title" th:text="*{nombre}">Card title</h5>
+						<p class="card-text" th:text=" Año + ': '+ *{#temporals.format(fecha, 'yyyy')}"></p>
+							<a class="btn btn-primary" th:href="@{/} + *{Id} " href="#">
+							Detalle
+							</a>
+					</div>
+				</div>
+		</div>
+    </div>
+     
+  </div>
+
+
+<footer class="bg-dark text-light py-3 mt-3">
+<div class = " container-xl"> &copy; 2023 Gonzalo García-Verdugo </div>
+</footer>
+
+
+
+
+
+	
+
+
+
+
+</body>
+
+
+
+</body>
+</html>

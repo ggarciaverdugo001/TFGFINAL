@@ -7,5 +7,5 @@ import com.example.paq.entidades.Genero;
 
 public interface GeneroRepository extends JpaRepository <Genero, Long> {
 	List<Genero> findByAlbumsId(Long id);
- 
+	
 }

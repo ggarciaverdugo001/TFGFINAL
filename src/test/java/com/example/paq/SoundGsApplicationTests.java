@@ -24,5 +24,10 @@ class SoundGsApplicationTests {
 	}
 	
 	
+	@Test
+
+	public void pruebarepository2(){
+		System.out.println(repo.findByNombreContainingIgnoreCase("Acid")); 
+	}
 
 }

@@ -1,5 +1,7 @@
 package com.example.paq.servicios;
 
+import java.util.List;
+
 import com.example.paq.entidades.Cancion;
 
 public interface CancionService {
@@ -16,6 +18,7 @@ public interface CancionService {
 	public Cancion modificar(Cancion album);
 	
 	public Iterable<Cancion> obtenerTitulos(Long id); 
+	List<Cancion> buscaPorNombre(String nombre);
 	
 	
 	

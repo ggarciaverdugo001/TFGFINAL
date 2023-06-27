@@ -1,5 +1,7 @@
 package com.example.paq.servicios;
 
+import java.util.List;
+
 import com.example.paq.entidades.Album;
 
 public interface AlbumService {
@@ -14,5 +16,9 @@ public interface AlbumService {
 	public Album insertar(Album album);
 	
 	public Album modificar(Album album);
+	
+	List<Album> buscaPorNombre(String nombre);
+	
+	List<Album>buscaPorGenero(String genero);
 	
 }

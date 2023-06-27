@@ -1,6 +1,8 @@
 
 package com.example.paq.servicios;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +47,12 @@ public class CancionServiceImpl implements CancionService{
 	@Override
 	public Iterable<Cancion> obtenerTitulos(Long id) {
 		return repo.findByAlbumId(id);
+	}
+
+	@Override
+	public List<Cancion> buscaPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

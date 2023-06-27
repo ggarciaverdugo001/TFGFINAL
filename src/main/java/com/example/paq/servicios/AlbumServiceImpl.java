@@ -1,5 +1,7 @@
 package com.example.paq.servicios;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +41,15 @@ public class AlbumServiceImpl implements AlbumService{
 		return null;
 	}
 
-	
+	@Override
+	public List<Album> buscaPorNombre(String nombre) {
+		  return repo.findByNombreContainingIgnoreCase(nombre);
+	}
+
+	@Override
+	public List<Album>buscaPorGenero(String genero) {
+	    return repo.findByNombreGenero(genero);
+	}
+
 	
 }

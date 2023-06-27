@@ -22,8 +22,8 @@
         <a class="nav-link" href="#">Acceso</a>
       </div>
       
-      <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" role="search" th:action="@{/buscar}" method="get">
+      <input class="form-control me-2" type="text" name="busqueda" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
     </div>
@@ -36,7 +36,14 @@
 	
 	
 	<div class="container-xl" style="margin-top: 2%">
-	<h1>Lista de álbumes </h1>
+	<h1>Lista de álbumes</h1>
+	
+	<form id="filtroForm" class="d-flex" role="search" th:action="@{/filtrar}" method="get">
+	<select class="form-select" aria-label="Default select example" name="genero">
+	<option>Todos</option>
+  <option th:each="genero: ${generos}" th:object="${genero}" th:text="*{nombre}">One</option>
+</select>
+ <button class="btn btn-outline-success" type="submit">Filtrar</button></form>
   <div class="row">
     <div class="col-3" style="padding:10px" th:each="album: ${albums}" th:object="${album}">
 
@@ -69,6 +76,7 @@
 
 
 
+<script src="/js/filtro.js"></script>
 
 </body>
 

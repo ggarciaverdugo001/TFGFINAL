@@ -8,5 +8,6 @@ import com.example.paq.entidades.Artista;
 
 public interface ArtistaRepository extends JpaRepository<Artista, Long> {
 	List<Artista> findByAlbumsId(Long id);
+	List<Artista> findByNombreContainingIgnoreCase(String nombre);
 
 }

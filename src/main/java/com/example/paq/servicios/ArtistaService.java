@@ -19,4 +19,5 @@ public interface ArtistaService {
 	
 	List<Artista> buscaPorArtista(Long id);
 
+	List<Artista> buscaPorNombre(String nombre);
 }

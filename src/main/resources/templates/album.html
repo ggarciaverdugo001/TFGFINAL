@@ -69,8 +69,9 @@ ul.csv li:last-child:after {
 
 								<ul class="csv">
 									Artista:
-									<li th:each="artista : ${detalle.artistas}"
-										th:text="${artista.nombre}"></li>
+									<li th:each="artista : ${detalle.artistas}">
+									 <a th:href="@{/artista/{id}(id=${artista.id})}" th:text="${artista.nombre}"></a>
+									 </li>
 								</ul>
 
 							</h6>
